@@ -1,0 +1,297 @@
+/* ============ Container Styling ============ */
+.outside {
+    margin-top: 0; /* 表格顶部多余间距问题修复 */
+    padding: 1.5rem;
+  }
+  
+  /* Header Styling */
+  .text-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .text-upper h2 {
+    margin: 0;
+    font-weight: 700;
+    color: #1f0f88;
+    font-size: 1.8rem;
+  }
+  
+  .text-upper .btn {
+    padding: 8px 15px;
+    background: linear-gradient(45deg, #6c63ff, #3f3d9a);
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .text-upper .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ============ Table Styling ============ */
+  .table-container {
+    margin-top: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 360px;
+    border-radius: 10px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    table-layout: auto; /* 修改为 auto，使列宽更加灵活 */
+  }
+  
+  .header {
+    background-color: #302dd2;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .head {
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .table-body {
+    background-color: #fefefe;
+  }
+  
+  .table-body tr:nth-child(even) {
+    background-color: #c4f0ff;
+  }
+  .table-body tr:hover {
+    background-color: #c8fffd;
+  }
+  
+  .table-data {
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #000000;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .table-data:last-child {
+    border-bottom: none;
+  }
+  
+  /* ============ Specific Column Width Adjustments ============ */
+  .table th:nth-child(3), /* Payment Upload */
+  .table td:nth-child(3),
+  .table th:nth-child(5), /* Receipt */
+  .table td:nth-child(5) {
+    width: 25%; /* 扩大这些列的宽度 */
+  }
+  
+  .table th:nth-child(4), /* Total Price */
+  .table td:nth-child(4),
+  .table th:nth-child(6), /* Status */
+  .table td:nth-child(6) {
+    width: 15%; /* 中等宽度 */
+  }
+  
+  /* ============ Button & Link Styling ============ */
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .viewReceiptBtn {
+    background-color: #1c71cb;
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .viewReceiptBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  span.unavailableReceipt {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+    font-size: 0.85rem;
+  }
+  
+  /* View Uploaded File Link */
+  .viewFileLink {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  .viewFileLink:hover {
+    color: #0056b3;
+  }
+  
+  /* Status Styling */
+  .status {
+    display: inline-block; /* 仅包裹文字 */
+    font-weight: bold;
+    border-radius: 12px; /* 圆角背景 */
+    text-transform: capitalize;
+    font-size: 0.75rem;
+    padding: 3px 8px; /* 背景颜色的内边距 */
+  }
+  
+  /* 各种状态对应的颜色 */
+  .status.pending {
+    background-color: #ffcc00;
+    color: #fff;
+  }
+  
+  .status.confirmed {
+    background-color: #28a79c;
+    color: #fff;
+  }
+  
+  .status.completed {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .status.cancelled {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  .payeditBtn {
+    background: none;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    border-color: #3f3d9a;
+    color: #3f3d9a;
+  }
+  
+  .payeditBtn:hover {
+    background-color: #3f3d9a;
+    color: #fff;
+  }
+
+/* For tablets and larger screens */
+@media (max-width: 768px) {
+    .text-upper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text-upper h2 {
+        font-size: 1.5rem;
+    }
+
+    .text-upper .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .table-container {
+        max-height: 300px;
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .table-data, .head {
+        font-size: 0.7rem;
+        padding: 8px;
+    }
+
+    .viewReceiptBtn {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+
+    .status {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+
+    .payeditBtn {
+        font-size: 0.7rem;
+        padding: 2px 5px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .text-upper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text-upper h2 {
+        font-size: 1.2rem;
+    }
+
+    .text-upper .btn {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .table-container {
+        max-height: 250px;
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .table-data, .head {
+        font-size: 0.6rem;
+        padding: 6px;
+    }
+
+    .viewReceiptBtn {
+        font-size: 0.6rem;
+        padding: 4px 8px;
+    }
+
+    .status {
+        font-size: 0.6rem;
+        padding: 2px 5px;
+    }
+
+    .payeditBtn {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+    }
+}
+
+  

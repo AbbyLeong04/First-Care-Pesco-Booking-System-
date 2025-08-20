@@ -1,0 +1,214 @@
+/* ============ Container Styling ============ */
+.outside {
+  margin-top: 0;
+  padding: 1.5rem;
+}
+
+/* Header Styling */
+.text-upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.text-upper h2 {
+  margin: 0;
+  font-weight: 700;
+  color: #1f0f88;
+  font-size: 1.8rem;
+}
+
+/* ============ Table Styling ============ */
+.table-container {
+  margin-top: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 380px;
+  border-radius: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.header {
+  background-color: #140568;
+  color: white;
+  font-weight: bold;
+}
+
+.head {
+  padding: 10px;
+  text-align: left;
+  color: #fff;
+  font-size: 0.8rem;
+  overflow: hidden;
+  word-wrap: break-word; /* 解决文本被隐藏 */
+}
+
+/* Table body styling */
+.table-body {
+  background-color: #fefefe;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: #c4f0ff;
+}
+
+.table-body tr:hover {
+  background-color: #c8fffd;
+}
+
+.table-data {
+  padding: 10px;
+  font-size: 0.8rem;
+  color: #4a4a4a;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  word-wrap: break-word; /* 解决文本被隐藏 */
+  white-space: normal; /* Allow line breaks for long text */
+  max-width: 200px; /* Optional: set a max width */
+  overflow: visible; /* Make sure the text is visible */
+}
+
+.table-data:last-child {
+  border-bottom: none;
+}
+
+.table th:nth-child(12), 
+.table td:nth-child(12) {
+  width: 7%; 
+}
+
+.table th:nth-child(11), 
+.table td:nth-child(11) {
+  width: 10%; 
+}
+
+/* Button Styles */
+.bookeditBtn, .bookdeleteBtn {
+  background: none;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 0.75rem;
+  padding: 3px 6px;
+}
+
+.bookeditBtn {
+  border-color: #3f3d9a;
+  color: #3f3d9a;
+}
+
+.bookeditBtn:hover {
+  background-color: #3f3d9a;
+  color: #fff;
+}
+
+.bookdeleteBtn {
+  border-color: #e63946;
+  color: #e63946;
+}
+
+.bookdeleteBtn:hover {
+  background-color: #e63946;
+  color: #fff;
+}
+
+/* Status Styling */
+.status {
+  font-weight: bold;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+}
+
+/* Correcting color for different status types */
+.status.pending {
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+.status.confirmed {
+  background-color: #28a79c;
+  color: #fff;
+}
+
+.status.completed {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.status.cancelled {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* For tablets and larger screens */
+@media (max-width: 768px) {
+  .table-container {
+      overflow-x: auto; /* Enable horizontal scrolling */
+  }
+
+  .table {
+      width: 100%; /* Ensure table takes full width */
+      min-width: 800px; /* Set a minimum width to allow scrolling */
+  }
+
+  .table-data, .head {
+      font-size: 0.7rem;
+      padding: 8px;
+      word-wrap: break-word; /* Allow text to wrap within cells */
+      white-space: normal; /* Let text wrap to the next line */
+  }
+
+  .bookeditBtn, .bookdeleteBtn {
+      font-size: 0.7rem;
+      padding: 2px 5px;
+  }
+
+  .status {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .table-container {
+      overflow-x: auto; /* Enable horizontal scrolling */
+  }
+
+  .table {
+      width: 100%; /* Ensure table takes full width */
+      min-width: 600px; /* Minimum width for mobile scrolling */
+  }
+
+  .table-data, .head {
+      font-size: 0.6rem;
+      padding: 6px;
+      word-wrap: break-word; /* Allow text to wrap within cells */
+      white-space: normal; /* Let text wrap to the next line */
+  }
+
+  .bookeditBtn, .bookdeleteBtn {
+      font-size: 0.6rem;
+      padding: 2px 4px;
+  }
+
+  .status {
+      font-size: 0.6rem;
+      padding: 2px 5px;
+  }
+}
+

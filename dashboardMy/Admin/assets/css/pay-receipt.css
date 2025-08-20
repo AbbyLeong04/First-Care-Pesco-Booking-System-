@@ -1,0 +1,39 @@
+.modal--content{
+    display:none; 
+    position:fixed; 
+    top:50%; left:50%; 
+    transform:translate(-50%, -50%); 
+    background-color:#fff; 
+    padding:20px; 
+    border:1px solid #000;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-title{
+    background-color: white;
+    color: rgb(23, 21, 112);
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.maincontent{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    gap: 20px;
+}
+
+/* Close Button */
+.closebtn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.closebtn:hover {
+    color: #000;
+}

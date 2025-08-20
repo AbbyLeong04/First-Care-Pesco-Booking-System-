@@ -1,0 +1,191 @@
+/* ========== 外部容器 ========== */
+.outside {
+  background-color: rgb(255, 255, 255); /* 白色背景 */
+  border-radius: 10px;
+  margin-top: 0; /* 如果确实需要间距可以调整为更小的值，比如 0.5rem */
+  padding: 1.5rem; /* 减小 padding，节省空间 */
+
+}
+
+/* 标题部分 */
+.text-upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.text-upper h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--blue);
+  margin: 0;
+}
+.text-upper .btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ========== 表格容器 ========== */
+.table-container {
+  width: 100%;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 添加轻微阴影 */
+  max-height: 380px; /* 表格显示的最大高度 */
+  border-radius: 10px; /* 保持与表格圆角一致 */
+  margin-top: 0; /* 确保表格紧贴标题下方 */
+
+}
+
+/* 表格整体样式 */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  table-layout: fixed; /* 固定列宽，让表格更紧凑 */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 1rem;
+
+}
+
+.head {
+  background-color: #140568;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+/* 表格主体样式 */
+.table-body{
+  background-color: #fefefe;
+} 
+
+.table-data {
+  padding: 10px;
+  font-size: 0.8rem;
+  color: #4a4a4a;
+  border: 1px solid #ddd;
+  text-align: left;
+  word-wrap: break-word;
+  white-space: normal;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: #c4f0ff;
+}
+.table-body tr:hover {
+  background-color: #c8fffd;
+}
+
+.table-data:last-child {
+  border-bottom: none;
+}
+
+
+
+/* ========== 按钮容器 ========== */
+
+/* Button Styles */
+.editBtn, .deleteBtn {
+  background: none;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 0.75rem; /* 按钮文字稍微缩小 */
+  padding: 3px 6px; /* 减小按钮内边距 */
+}
+
+.editBtn {
+  border-color: #3f3d9a;
+  color: #3f3d9a;
+}
+
+.editBtn:hover {
+  background-color: #3f3d9a;
+  color: #fff;
+}
+
+.deleteBtn {
+  border-color: #e63946;
+  color: #e63946;
+}
+
+.deleteBtn:hover {
+  background-color: #e63946;
+  color: #fff;
+}
+
+/* For tablets and larger screens */
+@media (max-width: 768px) {
+    .text-upper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text-upper h2 {
+        font-size: 1.5rem;
+    }
+
+    .text-upper .btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .table-container {
+        max-height: 300px;
+    }
+
+    .table-data, .head {
+        font-size: 0.7rem;
+        padding: 8px;
+    }
+
+    .editBtn, .deleteBtn {
+        font-size: 0.7rem;
+        padding: 2px 5px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .text-upper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text-upper h2 {
+        font-size: 1.2rem;
+    }
+
+    .text-upper .btn {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+
+    .table-container {
+        max-height: 250px;
+    }
+
+    .table-data, .head {
+        font-size: 0.6rem;
+        padding: 6px;
+    }
+
+    .editBtn, .deleteBtn {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+    }
+}
+

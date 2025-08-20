@@ -1,0 +1,364 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-start: #10365e; /* Gradient start */
+  --blue-end: #1f6ec1; /* Gradient end */
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #666;
+
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(to right, var(--blue-start), var(--blue-end));
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+  display: flex;
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--blue-start), var(--blue-end));
+  color: var(--white);
+  transition: 0.5s;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-bottom: 10px; /* Add spacing */
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white); /* Hovered or active item color */
+  color: var(--blue-start);
+}
+
+.navigation ul li a {
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  color: var(--white); /* Default text color */
+  font-size: 1rem; /* Optimized text size */
+  font-weight: 500; /* 字体加粗 */
+  align-items: center;
+
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--blue-start); /* Change text color for hovered and active item */
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation.active ul li a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  justify-content: center; /* 居中对齐图标 */
+}
+
+.navigation.active ul li a span {
+  display: none; /* 隐藏文字 */
+}
+
+.navigation.active ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+
+/* --------- curve outside弯曲部分 ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* User-side Section */
+.admin-side {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* 添加分割线 */
+  margin-bottom: 20px; /* 和下方按钮保持距离 */
+}
+
+.admin-side .admin-icon {
+  font-size: 3rem; /* 图标更醒目 */
+  margin-right: 15px; /* 与文字保持间距 */
+  color: var(--white); /* 保持与导航栏一致颜色 */
+}
+
+.admin-side .dash-title {
+  font-size: 1.5rem; /* 标题字体更大 */
+  font-weight: 700; /* 标题加粗 */
+  color: var(--white); /* 保持一致 */
+}
+
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Footer height */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  font-weight: 700px;
+
+}
+
+
+/* ===================== Main ===================== */
+.cardHeader{
+  font-size: 22px;
+  color: var(--blue-start);
+}
+
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--blue-start);
+}
+
+/* ======================= Cards ====================== */
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .card {
+  position: relative;
+  background: linear-gradient(to right, var(--blue-start), var(--blue-end));
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--white);
+}
+
+.cardBox .card .cardName {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--white);
+}
+
+.cardBox .card:hover {
+  background: var(--white);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--black1);
+}
+
+
+/* For tablets and larger screens */
+@media (max-width: 768px) {
+    .navigation {
+        width: 200px;
+    }
+
+    .navigation.active {
+        width: 60px;
+    }
+
+    .main {
+        width: calc(100% - 200px);
+        left: 200px;
+    }
+
+    .main.active {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .navigation {
+    width: 100%;
+    left: -100%;
+
+  }
+
+  .navigation.active {
+    left: 0;
+  }
+
+  .main {
+      width: 100%;
+      left: 0;
+  }
+
+  .main.active {
+    width: 100%;
+  }
+
+  .cardHeader{
+    font-size: 15px;
+    display: flex;
+  }
+
+  .cardBox {
+      grid-template-columns: 1fr;
+  }
+
+
+  /* 修复 admin-side 的显示问题 */
+  .admin-side {
+    display: flex;
+    flex-direction: column; /* 确保在小屏幕中纵向排列 */
+    align-items: center; /* 居中显示内容 */
+    padding: 10px;
+    text-align: center;
+  }
+
+  .admin-side .admin-icon {
+    margin-right: 0; /* 移除水平间距 */
+    font-size: 2.5rem; /* 调整图标大小以适配屏幕 */
+  }
+
+  .admin-side .dash-title {
+    font-size: 0.5rem; /* 减小标题大小 */
+  }
+
+  /* Footer */
+.footer {
+  font-size: 0.5rem;
+  font-weight: 700px;
+}
+}
+
+
+

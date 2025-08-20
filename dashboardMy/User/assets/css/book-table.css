@@ -1,0 +1,264 @@
+/* ============ Container Styling ============ */
+.outside {
+  margin-top: 0; /* 如果确实需要间距可以调整为更小的值，比如 0.5rem */
+  padding: 1.5rem; /* 减小 padding，节省空间 */
+}
+
+/* Header Styling */
+.text-upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.text-upper h2 {
+  margin: 0; /* 去掉 <h2> 标签默认的上下外边距 */
+  font-weight: 700;
+  color: #1f0f88;
+  font-size: 1.8rem;
+}
+
+.text-upper .btn {
+  padding: 8px 15px;
+  background: linear-gradient(45deg, #6c63ff, #3f3d9a);
+  text-decoration: none;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-upper .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============ Table Styling ============ */
+.table-container {
+  margin-top: 0; /* 确保表格紧贴标题下方 */
+  padding: 0; /* 如果表格外部有空白，可以调整为 0 */
+  overflow-x: hidden; /* 禁止水平滚动 */
+  overflow-y: auto; /* 开启垂直滚动 */
+  max-height: 380px; /* 表格显示的最大高度 */
+  border-radius: 10px; /* 保持与表格圆角一致 */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  table-layout: fixed; /* 固定列宽，让表格更紧凑 */
+}
+
+.header {
+  background-color: #302dd2;
+  color: white;
+  font-weight: bold;
+}
+
+.head {
+  padding: 10px;
+  text-align: left;
+  color: #fff;
+  font-size: 0.95rem;
+  font-size: 0.8rem; /* 缩小文字大小 */
+  padding: 10px; /* 减少单元格的内边距 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 超出文字部分显示省略号 */
+  white-space: nowrap; /* 防止文字换行 */
+  word-wrap: break-word; /* 解决文本被隐藏 */
+}
+
+.table-body {
+  background-color: #fefefe;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: #c4f0ff;
+}
+.table-body tr:hover {
+  background-color: #c8fffd;
+}
+
+.table-data {
+  padding: 10px;
+  font-size: 0.8rem;
+  color: #4a4a4a;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word; /* 解决文本被隐藏 */
+}
+
+.table-data:last-child {
+  border-bottom: none;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Button Styles */
+.editBtn, .deleteBtn {
+  background: none;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 0.75rem; /* 按钮文字稍微缩小 */
+  padding: 3px 6px; /* 减小按钮内边距 */
+}
+
+.editBtn {
+  border-color: #3f3d9a;
+  color: #3f3d9a;
+}
+
+.editBtn:hover {
+  background-color: #3f3d9a;
+  color: #fff;
+}
+
+.deleteBtn {
+  border-color: #e63946;
+  color: #e63946;
+}
+
+.deleteBtn:hover {
+  background-color: #e63946;
+  color: #fff;
+}
+
+/* Status Styling */
+.status {
+  font-weight: bold;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-size: 0.75rem; /* 状态标签文字缩小 */
+  padding: 3px 8px; /* 减少状态标签内边距 */
+}
+
+.status.pending {
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+.status.confirmed {
+  background-color: #28a79c;
+  color: #fff;
+}
+
+.status.completed {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.status.cancelled {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Media Query for Large Screens (Default is already for large screens) */
+
+/* Media Query for Medium Screens (≤ 1200px) */
+@media (max-width: 1200px) {
+  .table-container {
+    max-width: 100%; /* 确保容器宽度适配屏幕 */
+    overflow-x: auto; /* 开启水平滚动 */
+    overflow-y: auto; /* 保持垂直滚动 */
+    padding: 0.5rem; /* 增加容器内边距 */
+  }
+
+  .table {
+    font-size: 0.85rem; /* 缩小字体以节省空间 */
+    table-layout: auto; /* 列宽自动调整 */
+  }
+
+  .table-data {
+    padding: 8px; /* 减少单元格内边距 */
+  }
+
+  .head, .table-data {
+    white-space: nowrap; /* 避免文字换行 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 超出部分显示省略号 */
+  }
+}
+
+/* Media Query for Small Screens (≤ 768px) */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 0.5rem; /* 减少表格外的空白 */
+    max-height: 300px; /* 限制表格的垂直高度 */
+  }
+
+  .text-upper h2 {
+    font-size: 1.1rem; /* 缩小标题文字 */
+  }
+
+  .text-upper .btn {
+    font-size: 0.8rem; /* 缩小按钮文字 */
+    padding: 6px 12px; /* 缩小按钮内边距 */
+  }
+
+  .table {
+    font-size: 0.8rem; /* 再次缩小表格文字 */
+    border-radius: 8px; /* 减小表格圆角 */
+  }
+
+  .table-data, .head {
+    padding: 6px; /* 减少单元格内边距 */
+  }
+
+  .actions {
+    gap: 4px; /* 减少按钮间距 */
+  }
+}
+
+/* Media Query for Extra Small Screens (≤ 576px) */
+@media (max-width: 576px) {
+  .table-container {
+    padding: 0.3rem;
+    max-height: 250px; /* 限制表格高度，确保适应小屏幕 */
+  }
+
+  .text-upper {
+    flex-direction: column; /* 标题与按钮垂直排列 */
+    gap: 0.5rem;
+    align-items: flex-start; /* 左对齐内容 */
+  }
+
+  .text-upper h2 {
+    font-size: 1rem;
+  }
+
+  .text-upper .btn {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+
+  .table {
+    font-size: 0.75rem; /* 进一步缩小表格文字 */
+    border-radius: 6px;
+  }
+
+  .table-data, .head {
+    padding: 4px;
+    font-size: 0.7rem;
+  }
+
+  .status {
+    font-size: 0.6rem; /* 状态文字缩小 */
+    padding: 2px 6px;
+  }
+
+  .actions {
+    flex-direction: column; /* 按钮垂直排列 */
+    gap: 2px; /* 减少间距 */
+  }
+}
+
+

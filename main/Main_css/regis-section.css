@@ -1,0 +1,64 @@
+.regis-sec{
+    background-color: #fff;
+    padding: 40px 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.regis-content{
+    display: block;
+    justify-content: space-between;
+    text-align: center;
+    gap: 40px; /* 控制各部分间距 */
+}
+
+.regis-content p{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.regis-head{
+    color: #18084d;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.regis-btn{
+    margin-top: 20px;
+    background-color: #900228;
+    color: rgb(255, 255, 255);
+    border: solid;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.regis-btn:hover{
+    background-color: #56081d;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width: 480px) {  
+    .regis-content{
+        display: block;
+        justify-content: space-between;
+        text-align: center;
+        gap: 40px; /* 控制各部分间距 */
+    }
+    
+    .regis-content p{
+        font-size: 15px;
+    }
+    
+    .regis-head{
+        font-size: 18px;
+    }
+    
+    .regis-btn{
+    font-size: 15px;
+    }
+    
+  }
+  

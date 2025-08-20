@@ -1,0 +1,590 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-start: #1e3a8a; /* Gradient start */
+  --blue-end: #2563eb; /* Gradient end */
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #666;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(to right, var(--blue-start), var(--blue-end));
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--blue-start), var(--blue-end));
+  color: var(--white);
+  transition: 0.5s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  padding: 20px 0;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-bottom: 10px; /* Add spacing */
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white);
+  color: var(--blue-start);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--blue-start);
+}
+
+.navigation ul li:hover a .icon,
+.navigation ul li.hovered a .icon {
+  color: var(--blue-start);
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  padding: 12px 20px; /* Adjusted padding */
+  font-size: 1rem; /* Optimized text size */
+  font-weight: 500; /* 字体加粗 */
+  transition: 0.3s;
+}
+
+.navigation ul li a .icon {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem; /* Optimized icon size */
+  margin-right: 10px;
+}
+
+.navigation ul li a .title {
+  white-space: nowrap;
+}
+
+.navigation.active ul li a .title {
+  display: none;
+}
+
+/* User-side Section */
+.user-side {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* 添加分割线 */
+  margin-bottom: 20px; /* 和下方按钮保持距离 */
+}
+
+.user-side .user-icon {
+  font-size: 3rem; /* 图标更醒目 */
+  margin-right: 15px; /* 与文字保持间距 */
+  color: var(--white); /* 保持与导航栏一致颜色 */
+}
+
+.user-side .dashboard-title {
+  font-size: 1.5rem; /* 标题字体更大 */
+  font-weight: 700; /* 标题加粗 */
+  color: var(--white); /* 保持一致 */
+}
+
+
+
+/* Footer */
+.navigation .footer {
+  padding: 20px;
+  font-size: 0.8rem;
+  font-weight: 700px;
+  text-align: center;
+  color: var(--white);
+}
+
+/* ===================== Main ===================== */
+
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+  min-height: 100vh; /* 确保内容高度与页面高度一致 */
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--blue-start);
+}
+
+.cardHeader{
+  font-size: 22px;
+  color: var(--blue-start);
+}
+
+/* ======================= Cards ====================== */
+.cardBox {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .card {
+  background: linear-gradient(to right, var(--blue-start), var(--blue-end));
+  color: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  text-align: center; /* Center-align content */
+}
+
+.cardBox .card:hover {
+  transform: translateY(-10px);
+}
+
+.cardBox .card .iconBx {
+  font-size: 26px; /* Adjusted icon size */
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.cardBox .card .cardTitle {
+  font-size: 20px; /* Adjusted text size */
+  font-weight: 500;
+}
+
+.cardBox .card .cardName {
+  font-size: 15px; /* Adjusted number size */
+  font-weight: 300;
+}
+
+/*setting*/
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+}
+
+/* Modal Title */
+.setting-modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1f0f88;
+}
+
+/* Buttons inside Modal */
+/* Modal Overlay */
+.setting-modal {
+  display: none; /* 默认隐藏 */
+  position: fixed; /* 固定在窗口内 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  z-index: 1000; /* 使其覆盖其他内容 */
+}
+
+/* Modal Content */
+.setting-modal-content {
+  background: #fff;
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+}
+
+/* Modal Title */
+.setting-modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1f0f88;
+}
+
+/* Buttons inside Modal */
+.setting-modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.modal-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.popupContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popupContent {
+  text-align: center;
+  position: relative;
+  background: #fff;
+  padding: 10px; /* 调整内边距 */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90%; /* 限制弹窗内容宽度 */
+  max-height: 80%; /* 限制弹窗内容高度 */
+  overflow: auto; /* 如果内容超出，允许滚动 */
+}
+
+.popupImage {
+  width: auto; /* 自动适应宽度 */
+  height: auto; /* 自动适应高度 */
+  max-width: 100%; /* 图片最大宽度限制为弹窗内容的宽度 */
+  max-height: 100%; /* 图片最大高度限制为弹窗内容的高度 */
+  border-radius: 5px;
+  display: block; /* 保证图片居中 */
+  margin: 0 auto; /* 居中对齐 */
+}
+
+
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.popupButton {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.popupButton:hover {
+  background-color: #0056b3;
+}
+
+/* ====================== Responsive Design ========================== */
+/* Media Query: 平板屏幕 (768px-991px) */
+@media (max-width: 991px) {
+  .navigation {
+    left: -100%;
+  }
+  .navigation.active {
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    width: 100%;
+    
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .navigation .footer {
+    position: static; /* 确保在狭窄屏幕上显示正常 */
+    width: 80%;
+    padding: 10px 0;
+    font-size: 0.6rem;
+    font-weight: 300px;
+    text-align: center;
+  
+  }
+}
+
+/* Media Query: 小屏幕 (481px-768px) */
+@media (max-width: 768px) {
+  .navigation {
+    left: -100%;
+  }
+  .navigation.active {
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    width: 100%;
+  }
+  .cardHeader{
+    font-size: 18px;
+    display: flex;
+  }
+  .cardBox {
+    grid-template-columns: 1fr;
+  }
+  .navigation .footer {
+    position: static; /* 确保在狭窄屏幕上显示正常 */
+    width: 80%;
+    padding: 10px 0;
+    font-size: 0.6rem;
+    font-weight: 300px;
+    text-align: center;
+  
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    width: 100%;
+    left: -100%;
+  }
+  .navigation.active {
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    width: 100%;
+  }
+  .cardHeader h2 {
+    font-size: 18px;
+    display: flex;
+  }
+  .cardBox {
+    /*grid-template-columns: 1fr; 单列显示，适合窄屏 */
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cardBox .card {
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center; /* Center-align content */
+  }
+  
+  .cardBox .card .iconBx {
+    font-size: 20px; /* Adjusted icon size */
+    font-weight: 300;
+    margin-top: 5px;
+  }
+  
+  .cardBox .card .cardTitle {
+    font-size: 15px; /* Adjusted text size */
+    font-weight: 500;
+  }
+  
+  .cardBox .card .cardName {
+    font-size: 10px; /* Adjusted number size */
+    font-weight: 300;
+  }
+  .cardHeader h2 {
+    font-size: 18px;
+    display: flex;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation .footer {
+    position: static; /* 确保在狭窄屏幕上显示正常 */
+    width: 80%;
+    padding: 10px 0;
+    font-size: 0.6rem;
+    font-weight: 300px;
+    text-align: center;
+  
+  }
+  .popupButton {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  /* Modal Content */
+.setting-modal-content {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+/* Buttons inside Modal */
+.setting-modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.modal-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.edit-btn {
+  margin-right: 10px;
+}
+/* Delete Button */
+.delete-btn {
+  margin-left: 10px;
+}
+
+}
+

@@ -1,0 +1,17 @@
+{
+    "name": "leong/project-fyp",
+    "description": "My Final Year Project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Leong\\ProjectFyp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "leong"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+.verify-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .verify-modal-content {
+    text-align: center;
+  }
+  
+  .verify-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .step {
+    display: none;
+  }
+  
+  .step input, .step select {
+    margin: 10px 0;
+    width: 90%;
+    padding: 10px;
+  }
+  
+  .step button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .step button:hover {
+    background: #0056b3;
+  }
+  

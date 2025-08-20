@@ -1,0 +1,137 @@
+.search-modal {
+    background-color: rgb(255, 255, 255);
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 20px;
+    width: auto; /* Let the width adjust to content */
+    max-width: 1000px; /* Optional max-width to prevent it from growing too wide */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-left: auto; /* Center the modal horizontally */
+    margin-right: auto; /* Center the modal horizontally */
+}
+
+.search-content {
+    width: auto; /* Let the content adjust to its size */
+    max-height: 300px;
+    background: linear-gradient(to bottom, var(--blue-start), var(--blue-end));
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    overflow-x: auto;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    place-items: center; /* Center content inside this grid */
+}
+
+/* Style the form container to display items in a row */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between each item */
+}
+
+/* Optional: Style individual form elements */
+.search-form label {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.search-form input,
+.search-form select,
+.search-form button {
+    padding: 5px;
+    font-size: 1rem;
+}
+
+/* Additional styling for the button */
+.search-form button {
+    padding: 6px 12px;
+    background: linear-gradient(to bottom, var(--blue-start), var(--blue-end));
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.search-form button:hover {
+    background-color: #222a93;
+    transform: translateY(-10px);
+}
+
+.booking-btn {
+    padding: 10px 20px;
+    background: linear-gradient(to right, var(--blue-start), var(--blue-end));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background: linear-gradient(to right, var(--blue-start), var(--blue-end));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* For tablets and larger screens */
+@media (max-width: 768px) {
+    .search-modal {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .search-content {
+        max-height: 250px;
+        padding: 20px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-form button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .search-modal {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .search-content {
+        max-height: 200px;
+        padding: 15px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .booking-btn {
+        padding: 5px;
+        font-size: 0.5em;
+    }
+    
+    .back-btn {
+        padding: 5px;
+        font-size: 0.5em;
+    }
+}
